@@ -12,6 +12,7 @@
 <body>
     <div id="app">
         <header class="d-flex">
+            <!-- colonna di sinistra -->
             <section class="col-4 d-flex align-items-center">
                 <div class="col-6">
                     <img src="./assets/img/avatar_io.jpg" alt="avatar donna mora">
@@ -21,6 +22,7 @@
                 <div class="col-2 text-end"><i class="fas fa-comment-alt"></i></div>
                 <div class="col-2 text-end"><i class="fas fa-ellipsis-v"></i></div>
             </section>
+            <!-- colonna di destra -->
             <section class="col-8 d-flex align-items-center">
                 <div class="col-9 p-3 d-flex align align-items-center">
                     <img src="./assets/img/avatar_1.jpg" alt="avatar maschio arancione">
@@ -34,12 +36,58 @@
                 <div class="col-1"><i class="fas fa-ellipsis-v"></i></div>
             </section>
         </header>
+        <!-- main -->
         <main class="d-flex ">
-            <section class="col-4">
-
+            <!-- contenitore sinistro -->
+            <section class="main_left col-4 d-flex flex-column">
+                <!-- campanello notifiche azzurro  -->
+                <div class="azzurro vertical_2 d-flex align-items-center p-3">
+                    <div class="icon_blue">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="p-4 d-flex flex-column">
+                        <h5 class="mt-2">Ricevi notifiche ai messaggi</h5>
+                        <p class="text-muted"><u>attiva notifiche deskopt</u></p>
+                    </div>
+                </div>
+                <!-- barra di ricerca -->
+                <div class="search_user d-flex">
+                    <div class="search_icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="search_input">
+                        <input type="text" placeholder="cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                <!-- lista user con conversazioni all'attivo  -->
+                <div class="vertical_9 user_list">
+                    <div class="d-flex pb-3" v-for="user in contacts">
+                        <img :src="'./assets/img/avatar' + user.avatar + `.jpg`" alt="">
+                        <h4>{{user.name}}</h4>
+                    </div>
+                </div>
             </section>
-            <section class="col-8">
-
+            <!-- /contenitore sinistro -->
+            <section class="main_right col-8 d-flex flex-column">
+                <!-- contenitore chat principale -->
+                <div class="space_chat">
+                    <div class="user_message">
+                        <p>hai portato fuori il cane?</p>
+                        <h6 class="text-muted">21/10/1997</h6>
+                    </div>
+                    <div class="answer_message">
+                        <p>hai portato fuori il cane?</p>
+                        <h6 class="text-muted">21/10/1997</h6>
+                    </div>
+                </div>
+                <!-- contenitore barra chat -->
+                <div class="input_chat d-flex align-items-center">
+                    <div class="col-2 text-center"><i class="far fa-smile"></i></div>
+                    <div class="col-8">
+                        <input type="text" placeholder="Scrivi un messaggio">
+                    </div>
+                    <div class="col-2 text-center"><i class="fas fa-microphone"></i></div>
+                </div>
             </section>
         </main>
     </div>
