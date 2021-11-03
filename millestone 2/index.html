@@ -61,7 +61,7 @@
                 </div>
                 <!-- lista user con conversazioni all'attivo  -->
                 <div class="vertical_9 user_list">
-                    <div class="d-flex" v-for="user in contacts">
+                    <div class="d-flex" v-for="(user,index) in contacts" @click="contatore(index)">
                         <div class="d-flex py-1">
                             <img :src="'./assets/img/avatar' + user.avatar + `.jpg`" alt="">
                             <h4>{{user.name}}</h4>
@@ -73,14 +73,10 @@
             <section class="main_right col-8 d-flex flex-column">
                 <!-- contenitore chat principale -->
                 <div class="space_chat">
-                    <div v-for="message in contacts" class="d-flex flex-column">
-                        <div :class="message.messages[0].status">
-                            <p>{{message.messages[0].text}}</p>
-                            <h6 class="text-muted">{{message.messages[0].date}}</h6>
-                        </div>
-                        <div :class="message.messages[1].status">
-                            <p>{{message.messages[1].text}}</p>
-                            <h6 class="text-muted">{{message.messages[1].date}}</h6>
+                    <div v-for="message in contacts[c].messages" class="d-flex flex-column">
+                        <div :class="message.status">
+                            <p>{{message.text}}</p>
+                            <h6 class="text-muted">{{message.date}}</h6>
                         </div>
                     </div>
                 </div>
