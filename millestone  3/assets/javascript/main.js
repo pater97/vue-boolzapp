@@ -15,6 +15,10 @@ const app = new Vue({
     el:`#app`,
     data:{
         c:0,
+        message:``,
+        ok:`ok`,
+        arrayOk:[],
+        sendedMessage:[],
         contacts: [
             {
             name: 'Michele',
@@ -104,6 +108,11 @@ const app = new Vue({
     methods:{
         contatore:function contatore(index){
             this.c = index
+        },
+        addMessage: function addMessage(){
+            this.sendedMessage.push(this.message)
+            this.message = ``
+            this.arrayOk.push(this.ok)
         }
     }
     
