@@ -77,9 +77,10 @@ main{
 /* main_right **************************************************/
 .space_chat{
     height: 85%;
-    background-image: url("./assets/img/mine.jpg");
+    background-image: url("../img/mine.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: auto;
 }
 .input_chat{
     height: 15%;
@@ -107,13 +108,14 @@ main{
 /* messaggi in chat  */
 .user_message{
     background-color: #D5F9BA;
+    align-self: end;
 }
 .answer_message{
     background-color: white;
 }
 .user_message ,.answer_message{
     margin: 3rem;
-    width: 200px;
+    width: 300px;
     border-radius: 15px;
 }
 
