@@ -139,8 +139,8 @@ const app = new Vue({
             },1000)
         },
         searchSame:function(){
-            this.contacts.forEach(element => {
-                if(element.name.includes(this.ricerca)){
+            this.contacts.forEach((element)=> {
+                if(element.name.toLowerCase().includes(this.ricerca.toLowerCase())){
                     this.arrayDiRicerca.push(element)
                 }
                 console.log(this.arrayDiRicerca);
