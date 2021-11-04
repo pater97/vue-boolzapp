@@ -62,8 +62,8 @@
                 </div>
                 <!-- lista user con conversazioni all'attivo  -->
                 <div class="vertical_9 user_list">
-                    <div class="d-flex" v-for="(user,index) in contacts" @click="contatore(index)">
-                        <div class="d-flex py-1">
+                    <div class="d-flex" v-for="(user,index) in contacts"  @click="contatore(index)">
+                        <div class="d-flex py-1 w-100" :class="index == c ? 'active' : ''">
                             <img :src="'./assets/img/avatar' + user.avatar + `.jpg`" alt="">
                             <h4>{{user.name}}</h4>
                         </div>

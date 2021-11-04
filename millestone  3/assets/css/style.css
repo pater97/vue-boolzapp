@@ -155,3 +155,6 @@ padding-left: .8rem;
 .user_list div:hover{
     background-color: lightgrey;
 }
+.active{
+    background-color: lightgrey;
+}
