@@ -15,6 +15,7 @@ const app = new Vue({
     el:`#app`,
     data:{
         c:0,
+        cf:1,
         ricerca: ``,
         arrayDiRicerca: [],
         message:{
@@ -138,18 +139,5 @@ const app = new Vue({
                 }
             },1000)
         },
-        searchSame:function(){
-            this.arrayDiRicerca = []
-            this.contacts.forEach((element)=> {
-                if(element.name.toLowerCase().includes(this.ricerca.toLowerCase())){
-                    this.arrayDiRicerca.push(element)
-                }
-                console.log(this.arrayDiRicerca);
-            });
-        }
     },
-    computed:{
-       
-    }
-    
 })
