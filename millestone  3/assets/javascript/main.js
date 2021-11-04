@@ -114,7 +114,21 @@ const app = new Vue({
             if(this.message.text != ``){
                 this.contacts[this.c].messages.push(this.message);
             }
-        }
+            this.message = {
+                date: new Date() .toLocaleString(),
+                text: `ok`,
+                status: `received` 
+            };
+            if(this.message.text != ``){
+                this.contacts[this.c].messages.push(this.message);
+            }
+            this.message = {
+                date: new Date() .toLocaleString(),
+                text:``,
+                status:`sent`
+            }
+        
+        },
     }
     
 })
