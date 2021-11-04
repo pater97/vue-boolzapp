@@ -16,7 +16,7 @@ const app = new Vue({
     data:{
         c:0,
         message:{
-            data: new Date() .toLocaleString(),
+            date: new Date() .toLocaleString(),
             text:``,
             status: `sent`
         },
