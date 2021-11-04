@@ -14,14 +14,14 @@
     <div id="app">
         <header class="d-flex">
             <!-- colonna di sinistra -->
-            <section class="col-4 d-flex align-items-center">
-                <div class="col-6">
+            <section class="col-4 d-flex align-items-center justify-content-between">
+                <div class="principal_user">
                     <img src="./assets/img/avatar_io.jpg" alt="avatar donna mora">
                     <span>Nome utente</span>
                 </div>
-                <div class="col-2 text-end"><i class="fas fa-circle-notch"></i></div>
-                <div class="col-2 text-end"><i class="fas fa-comment-alt"></i></div>
-                <div class="col-2 text-end"><i class="fas fa-ellipsis-v"></i></div>
+                <div class="text-end"><i class="fas fa-circle-notch"></i></div>
+                <div class="text-end"><i class="fas fa-comment-alt"></i></div>
+                <div class="text-end"><i class="fas fa-ellipsis-v"></i></div>
             </section>
             <!-- colonna di destra -->
             <section class="col-8 d-flex align-items-center">
@@ -80,22 +80,12 @@
                             <h6 class="text-muted">{{message.date}}</h6>
                         </div>
                     </div>
-                    <div class="add_message d-flex flex-column" v-for="message in sendedMessage">
-                        <div class="sent">
-                            <p>{{message}}</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column" v-for="word in arrayOk">
-                        <div class="received">
-                            <p>{{word}}</p>
-                        </div>
-                    </div>
                 </div>
                 <!-- contenitore barra chat -->
                 <div class="input_chat d-flex align-items-center">
                     <div class="col-2 text-center"><i class="far fa-smile"></i></div>
                     <div class="col-8">
-                        <input type="text" placeholder="Scrivi un messaggio" v-model="message" @keyup.enter="addMessage">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="message.text" @keyup.enter="addMessage">
                     </div>
                     <div class="col-2 text-center"><i class="fas fa-microphone"></i></div>
                 </div>

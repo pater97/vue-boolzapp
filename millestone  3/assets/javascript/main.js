@@ -15,10 +15,11 @@ const app = new Vue({
     el:`#app`,
     data:{
         c:0,
-        message:``,
-        ok:`ok`,
-        arrayOk:[],
-        sendedMessage:[],
+        message:{
+            data: new Date() .toLocaleString(),
+            text:``,
+            status: `sent`
+        },
         contacts: [
             {
             name: 'Michele',
@@ -110,9 +111,9 @@ const app = new Vue({
             this.c = index
         },
         addMessage: function addMessage(){
-            this.sendedMessage.push(this.message)
-            this.message = ``
-            this.arrayOk.push(this.ok)
+            if(this.message.text != ``){
+                this.contacts[this.c].messages.push(this.message);
+            }
         }
     }
     
