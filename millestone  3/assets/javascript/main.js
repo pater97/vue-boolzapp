@@ -114,25 +114,29 @@ const app = new Vue({
             if(this.message.text != ``){
                 this.contacts[this.c].messages.push(this.message);
             }
-            let clock = 0
-            clock = setTimeout(function(){
-                this.message = {
+            this.message = {
+                date: new Date() .toLocaleString(),
+                text:``,
+                status: `sent`
+            }
+            let self = this
+            setTimeout(function(){
+                self.message = {
                     date: new Date() .toLocaleString(),
-                    text: `ok`,
-                    status: `received` 
+                    text:`ok`,
+                    status: `received`
                 };
-                if(this.message.text != ``){
-                    this.contacts[this.c].messages.push(this.message);
+                if(self.message.text != ``){
+                    self.contacts[self.c].messages.push(self.message);
                 }
-                this.message = {
+                self.message = {
                     date: new Date() .toLocaleString(),
                     text:``,
-                    status:`sent`
+                    status: `sent`
                 }
             },1000)
-            
-        
         },
+        
     }
     
 })
