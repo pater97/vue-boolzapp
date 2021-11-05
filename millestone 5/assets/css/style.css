@@ -95,6 +95,23 @@ main{
     width: 6rem;
     border-radius: 50%;
 }
+.container_user{
+    height: 6.5rem;
+    overflow-y: hidden;
+}
+/* aggiunta di info chat ultimi messaggi  */
+.text-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.text-container h4{
+    width: 40%;
+}
+.text-container .ultima_data{
+    width: 60%;
+    text-align: end;
+}
+
 /* main_right **************************************************/
 .space_chat{
     height: 85%;

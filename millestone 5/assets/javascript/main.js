@@ -17,6 +17,7 @@ const app = new Vue({
         c:0,
         ricerca: ``,
         finestra: document.getElementsByClassName("infoWindow"),
+        chatMessage: document.getElementsByClassName("chatMessage"),
         arrayDiRicerca: [],
         message:{
             date: new Date() .toLocaleString(),
@@ -154,6 +155,12 @@ const app = new Vue({
         infoWindowClose:function infoWindow(index){
             for(let i = 0; i < this.finestra.length;i++){
                 this.finestra[index].style.display="none"
+            }
+        },
+        //eliminare messaggio corrente
+        deleteMessage: function deleteMessage(index){
+            for(let i = 0; i < this.chatMessage.length;i++){
+                this.chatMessage[index].style.display="none"
             }
         }
     },

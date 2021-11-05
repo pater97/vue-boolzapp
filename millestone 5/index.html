@@ -63,9 +63,13 @@
                 <!-- lista user con conversazioni all'attivo  -->
                 <div class="vertical_9 user_list">
                     <div class="d-flex" v-for="(user,index) in contacts" v-if="user.name.toLowerCase().includes(ricerca.toLowerCase())" @click="contatore(index)">
-                        <div class="d-flex py-1 w-100" :class="index == c ? 'active' : ''">
+                        <div class="container_user d-flex py-1 w-100" :class="index == c ? 'active' : ''">
                             <img :src="'./assets/img/avatar' + user.avatar + `.jpg`" alt="">
-                            <h4>{{user.name}}</h4>
+                            <div class="text-container">
+                                <h4>{{user.name}}</h4>
+                                <h6 class="ultima_data text-muted">{{user.messages[user.messages.length - 1].date}}</h6>
+                                <h6 class="text-muted">{{user.messages[user.messages.length - 1].text}}</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,11 +80,11 @@
                 <div class="space_chat">
                     <div v-for="(message,index) in contacts[c].messages" class="d-flex flex-column">
                         <!-- //premere tasto destro mouse per aprire menu e sinistro per chiuderlo -->
-                        <div :class="message.status" @contextmenu.prevent="infoWindowOpen(index)" @click="infoWindowClose(index)" >
+                        <div class="chatMessage" :class="message.status" @contextmenu.prevent="infoWindowOpen(index)" @click="infoWindowClose(index)" >
                             <div class="infoWindow">
                                 <div>
                                     <h6>message info</h6>
-                                    <h6>delete message</h6>
+                                    <h6 @click="deleteMessage(index)">delete message</h6>
                                 </div>
                             </div>
                             <p>{{message.text}}</p>
