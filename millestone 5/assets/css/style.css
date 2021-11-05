@@ -1,0 +1,160 @@
+/*reset */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* generali **/
+body{
+    height: 100vh;
+    padding: 1rem 0;
+    position:relative;
+    background-image: linear-gradient(
+        359deg, #e0e0e0, white);
+}
+.verdone{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #009688;
+    height: 117px;
+    z-index: 0;
+}
+#app{
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    position:relative;
+    z-index: 10;
+}
+/* header *********************************************************/
+header{
+    background-color: #E5E5E5;
+    height: 100px;
+}
+header img{
+    width: 80px;
+    border-radius: 50%;
+   margin-left: 1rem;
+}
+header span{
+    font-size: 1.2rem;
+    font-weight:500;
+}
+header .fas{
+    color: #B1B1B1;
+    font-size: 1.8rem;
+}
+/* main********************************************************/
+main{
+    height: calc(100% - 100px);
+}
+/* main_left **************************************************/
+.main_left{
+    background-color: white;
+}
+/* alert notifiche */
+.icon_blue{
+    background-color: #F2FBFF;
+    color: #8EDAFC;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.azzurro p{
+    margin-top: -.6rem;
+}
+/* zona di ricerca utente  */
+.search_user{
+    margin: .3rem;
+    padding: .5rem;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+}
+.search_icon{
+    width: 10%;
+    text-align: center;
+}
+.search_input{
+    width: 90%;
+}
+.search_input input{
+    width: 100%;
+    border: none
+}
+/* <!-- lista user con conversazioni all'attivo  --> */
+.user_list{
+    overflow-y: auto;
+}
+.user_list img{
+    margin: 0 1rem;
+    width: 6rem;
+    border-radius: 50%;
+}
+/* main_right **************************************************/
+.space_chat{
+    height: 85%;
+    background-image: url("../img/mine.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+}
+.input_chat{
+    height: 15%;
+    background-color: #F3EEEA;
+}
+.input_chat .fa-smile,.input_chat .fa-microphone{
+    font-size: 2rem;
+    color: #6B7376;
+}
+.input_chat input{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+}
+/* utility */
+.azzurro{
+    background-color: #8EDAFC;
+}
+.vertical_2{
+    height: 20%
+}
+.vertical_9{
+    height: 70%;
+}
+/* messaggi in chat  */
+.sent{
+    background-color: #D5F9BA;
+    align-self: end;
+}
+.received{
+    background-color: white;
+}
+.sent ,.received{
+    margin: 3rem;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.sent p,.received p{
+padding-top: 1rem;
+padding-left: .8rem;
+}
+.sent h6,.received h6{
+    font-size: .8rem;
+    margin-top: -1rem;
+    text-align: end;
+    padding-bottom: 1rem;
+    padding-right: .5rem;
+}
+/* effettistica */
+.user_list div:hover{
+    background-color: lightgrey;
+}
+.active{
+    background-color: lightgrey;
+}
