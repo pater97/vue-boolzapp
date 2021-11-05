@@ -16,6 +16,7 @@ const app = new Vue({
     data:{
         c:0,
         ricerca: ``,
+        finestra: document.getElementsByClassName("infoWindow"),
         arrayDiRicerca: [],
         message:{
             date: new Date() .toLocaleString(),
@@ -109,9 +110,11 @@ const app = new Vue({
                ]
         },
     methods:{
+        //cambia chat al click
         contatore:function contatore(index){
             this.c = index
         },
+        //comparsa di messaggi 
         addMessage: function addMessage(){
             if(this.message.text != ``){
                 this.contacts[this.c].messages.push(this.message);
@@ -138,16 +141,20 @@ const app = new Vue({
                 }
             },1000)
         },
+        //genera data
         accessDate:function accessDate(){
             return new Date() .toLocaleString()
         },
-        infoWindow:function infoWindow(index){
-            const finestra = document.getElementsByClassName("infoWindow")
-            for(let i = 0; i < finestra.length;i++){
-                finestra[index].style.display="block"
+        //premere tasto destro mouse per aprire menu e sinistro per chiuderlo
+        infoWindowOpen:function infoWindow(index){
+            for(let i = 0; i < this.finestra.length;i++){
+                this.finestra[index].style.display="block"
             }
-            console.log(finestra);
-           
+        },
+        infoWindowClose:function infoWindow(index){
+            for(let i = 0; i < this.finestra.length;i++){
+                this.finestra[index].style.display="none"
+            }
         }
     },
 })

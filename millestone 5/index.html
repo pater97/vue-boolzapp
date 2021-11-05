@@ -75,7 +75,8 @@
                 <!-- contenitore chat principale -->
                 <div class="space_chat">
                     <div v-for="(message,index) in contacts[c].messages" class="d-flex flex-column">
-                        <div :class="message.status" @click="infoWindow(index)">
+                        <!-- //premere tasto destro mouse per aprire menu e sinistro per chiuderlo -->
+                        <div :class="message.status" @contextmenu.prevent="infoWindowOpen(index)" @click="infoWindowClose(index)" >
                             <div class="infoWindow">
                                 <div>
                                     <h6>message info</h6>
