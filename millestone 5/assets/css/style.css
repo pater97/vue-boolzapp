@@ -138,6 +138,7 @@ main{
     margin: 3rem;
     width: 300px;
     border-radius: 15px;
+    position: relative;
 }
 
 .sent p,.received p{
@@ -157,4 +158,29 @@ padding-left: .8rem;
 }
 .active{
     background-color: lightgrey;
+}
+/* finestra di scelta  */
+.infoWindow{
+    background: white;
+    height: 80px;
+    width: 150px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    display: none;
+}
+.infoWindow div{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    align-items: center;
+    width: 100%;
+}
+.infoWindow div h6{
+    line-height: 1.5rem;
+}
+.infoWindow div h6:hover{
+    background-color: lightgrey;
+    width: 100%;
+    cursor: pointer;
 }

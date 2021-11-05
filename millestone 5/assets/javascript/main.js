@@ -15,7 +15,6 @@ const app = new Vue({
     el:`#app`,
     data:{
         c:0,
-        cf:1,
         ricerca: ``,
         arrayDiRicerca: [],
         message:{
@@ -139,5 +138,16 @@ const app = new Vue({
                 }
             },1000)
         },
+        accessDate:function accessDate(){
+            return new Date() .toLocaleString()
+        },
+        infoWindow:function infoWindow(index){
+            const finestra = document.getElementsByClassName("infoWindow")
+            for(let i = 0; i < finestra.length;i++){
+                finestra[index].style.display="block"
+            }
+            console.log(finestra);
+           
+        }
     },
 })

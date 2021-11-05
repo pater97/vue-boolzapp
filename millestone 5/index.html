@@ -29,7 +29,7 @@
                     <img :src="'./assets/img/avatar' + contacts[c].avatar + `.jpg`" alt="">
                     <div class="d-flex flex-column p-3">
                         <span>{{contacts[c].name}}</span>
-                        <p class="text-muted">Ultimo accesso oggi alle</p>
+                        <p class="text-muted">Ultimo accesso oggi alle {{accessDate()}}</p>
                     </div>
                 </div>
                 <div class="col-1"><i class="fas fa-search"></i></div>
@@ -74,8 +74,14 @@
             <section class="main_right col-8 d-flex flex-column">
                 <!-- contenitore chat principale -->
                 <div class="space_chat">
-                    <div v-for="message in contacts[c].messages" class="d-flex flex-column">
-                        <div :class="message.status">
+                    <div v-for="(message,index) in contacts[c].messages" class="d-flex flex-column">
+                        <div :class="message.status" @click="infoWindow(index)">
+                            <div class="infoWindow">
+                                <div>
+                                    <h6>message info</h6>
+                                    <h6>delete message</h6>
+                                </div>
+                            </div>
                             <p>{{message.text}}</p>
                             <h6 class="text-muted">{{message.date}}</h6>
                         </div>
